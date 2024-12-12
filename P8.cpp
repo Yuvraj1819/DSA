@@ -17,24 +17,24 @@ public:
     }
 
     
-    void heapify(int size, int i) {
+    void heapify(int n, int i) {
         int largest = i;       
         int left = 2 * i + 1;  
         int right = 2 * i + 2; 
 
-        if (left < size && arr[left] > arr[largest]) {
+        if (left < n && arr[left] > arr[largest]) {
             largest = left;
         }
 
         
-        if (right < size && arr[right] > arr[largest]) {
+        if (right < n && arr[right] > arr[largest]) {
             largest = right;
         }
 
         
         if (largest != i) {
             swap(arr[i], arr[largest]);
-            heapify(size, largest);
+            heapify(n, largest);
         }
     }
 
